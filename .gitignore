@@ -1,0 +1,4 @@
+dist
+fireferret.egg-info
+__pycache__
+*.log
