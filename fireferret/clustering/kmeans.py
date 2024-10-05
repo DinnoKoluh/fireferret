@@ -22,7 +22,7 @@ class KMeans:
         centroids = X[random_centroids]
         return centroids
 
-    def fit(self, X: np.ndarray, animate: bool = False) -> tuple[list[list[np.ndarray]], np.ndarray]:
+    def fit(self, X: np.ndarray, animate: bool = False) -> tuple[list[np.ndarray], np.ndarray]:
         """
         Take MxN matrix, where M is the number of datapoints, and N is the dimension of the vector space, and
         perform the K-means algorithm to clusterize the datapoints in distinct clusters.
@@ -47,6 +47,7 @@ class KMeans:
             centroids = new_centroids
             if animate and X.shape[1] == 2:
                 self.animation(clusters, centroids)
+        clusters = [np.array(cluster) for cluster in clusters] # convert the list of points to np.array
         return clusters, centroids
 
     def animation(self, clusters, centroids):
@@ -57,4 +58,4 @@ class KMeans:
             self.ax.plot(centroid[0], centroid[1], "xb", markersize=15)
         plt.grid()
         plt.show()
-        plt.pause(1)
+        plt.pause(0.5)
