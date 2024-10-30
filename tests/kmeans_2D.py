@@ -4,7 +4,7 @@
 import numpy as np
 from util import generate_random_cluster_points
 
-from fireferret.clustering.kmeans import KMeans
+from fireferret.clustering import KMeans
 
 kmeans = KMeans(n_clusters=4)
 
